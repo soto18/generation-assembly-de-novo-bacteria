@@ -1,0 +1,5 @@
+outs:
+- md5: 6eb6ce4b70de0ccef08ff95c72770a53
+  size: 1774432415
+  hash: md5
+  path: escherichia_db.fasta.gz
