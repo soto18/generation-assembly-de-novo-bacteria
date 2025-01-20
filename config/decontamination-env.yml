@@ -1,0 +1,9 @@
+name: decontamination
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - blast=2.16.0
+  - seqkit=2.9.0
+  - coreutils

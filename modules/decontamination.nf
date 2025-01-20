@@ -1,4 +1,0 @@
-process remove_contamination {
-
-}
-
