@@ -7,16 +7,16 @@ process QualityControl {
         val output_name
 
     output:
-        path "${output_name}/qc/*"
+        path "${output_name}/inicial_qc/*"
 
     script:
         """
         filename=\$(basename "${input_file}" | sed 's/\\.gz\$//')
-        mkdir -p "${output_name}/qc"
+        mkdir -p "${output_name}/inicial_qc"
 
         # Control de calidad inicial
-        fastqc "${input_file}" --outdir "${output_name}/qc/" --threads 4
-        nanoq --input "${input_file}" --stats -vv --report "${output_name}/qc/\${filename}_nanoq.stats"
+        fastqc "${input_file}" --outdir "${output_name}/inicial_qc/" --threads 4
+        nanoq --input "${input_file}" --stats -vv --report "${output_name}/inicial_qc/\${filename}_nanoq.stats"
         """
 }
 
