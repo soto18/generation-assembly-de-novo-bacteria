@@ -1,0 +1,11 @@
+name: assembly-env
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.8
+  - flye=2.9.5
+  - medaka
+  - coreutils
+

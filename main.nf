@@ -16,6 +16,9 @@ include { MakeBlastDB } from './modules/decontamination.nf'
 include { DetectContaminants } from './modules/decontamination.nf'
 include { RemoveContamination } from './modules/decontamination.nf'
 
+include { RemoveDuplicates } from './modules/assembly.nf'
+include { RunAssembly } from './modules/assembly.nf'
+
 
 workflow {
     genome_file_ch = Channel.fromPath(params.genome_file)
@@ -32,5 +35,10 @@ workflow {
     db = MakeBlastDB(contamination_file_ch, params.output_name)
     result = DetectContaminants(db, query_seq, params.output_name)
     id_contamination = result.map { it[0] }
-    RemoveContamination(id_contamination, genome_filter, params.output_name)
+    clean_genome = RemoveContamination(id_contamination, genome_filter, params.output_name)
+
+    genome_no_duplicated = RemoveDuplicates(clean_genome, params.output_name)
+    assembled_genome = RunAssembly(genome_no_duplicated, params.output_name)
+
+    assembled_genome.view()
 }
