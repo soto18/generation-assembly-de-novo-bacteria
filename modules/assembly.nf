@@ -41,16 +41,17 @@ process GenomePolishing {
     publishDir 'results/', mode: 'copy'
 
     input:
-        path clean_genome
+        path assembled_genome
+        path genome_no_duplicated
         val output_name    
 
     output:
-        path "${output_name}/assembly"   
+        path "${output_name}/assembly/medaka_output/*"   
 
     script:
         """  
         mkdir -p "${output_name}/assembly"
 
-        medaka_consensus -i genome_no_duplicates.fastq.gz -d out_nano/assembly.fasta -o medaka_output -t 4
+        medaka_consensus -i "${genome_no_duplicated}" -d "${assembled_genome}" -o ${output_name}/assembly/medaka_output/ -t 4
         """       
 }

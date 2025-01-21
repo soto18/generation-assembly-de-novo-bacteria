@@ -18,6 +18,8 @@ include { RemoveContamination } from './modules/decontamination.nf'
 
 include { RemoveDuplicates } from './modules/assembly.nf'
 include { RunAssembly } from './modules/assembly.nf'
+include { GenomePolishing } from './modules/assembly.nf'
+
 
 
 workflow {
@@ -38,7 +40,8 @@ workflow {
     clean_genome = RemoveContamination(id_contamination, genome_filter, params.output_name)
 
     genome_no_duplicated = RemoveDuplicates(clean_genome, params.output_name)
-    assembled_genome = RunAssembly(genome_no_duplicated, params.output_name)
+    assembly_folder = RunAssembly(genome_no_duplicated, params.output_name)
 
-    assembled_genome.view()
+    assembled_genome = assembly_folder.map { it[5] }
+    GenomePolishing(assembled_genome, genome_no_duplicated, params.output_name)
 }
