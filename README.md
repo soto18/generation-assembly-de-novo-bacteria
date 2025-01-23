@@ -5,9 +5,9 @@
 2. [Requisitos](#requisitos)
 3. [Ejecución del pipeline](#ejecución-del-pipeline)
    - [Comando de ejecución](#comando-de-ejecución)
-   - [Descripción de los parámetros](#descripción-de-los-parámetros)
+   - [Descripción de los parámetros](#descripción-de-parámetros)
 4. [Resultados](#resultados)
-5. [Raw data and preprocessing](#data)
+5. [Raw data](#datos-sin-procesar-y-ensamblaje-del-genoma)
 
 ---
 
