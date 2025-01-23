@@ -46,12 +46,15 @@ process GenomePolishing {
         val output_name    
 
     output:
-        path "${output_name}/assembly/medaka_output/*"   
+        path "${output_name}/assembly/medaka_output/*"
+        path "${output_name}/assembly/medaka_output/consensus.fasta", emit: consensus_genome
+        path "${output_name}/assembly/medaka_output/calls_to_draft.bam", emit: bam_file
+
 
     script:
         """  
         mkdir -p "${output_name}/assembly"
 
-        medaka_consensus -i "${genome_no_duplicated}" -d "${assembled_genome}" -o ${output_name}/assembly/medaka_output/ -t 4
+        medaka_consensus -i "${genome_no_duplicated}" -d "${assembled_genome}" -o "${output_name}/assembly/medaka_output/" -t 16
         """       
 }

@@ -56,7 +56,7 @@ process DetectContaminants {
         blastn -db "../../../results/${output_name}/decontamination/db/escherichia_db" \
                -query "${query_seq}" \
                -out "${output_name}/decontamination/blast_results.out" \
-               -num_threads 6 \
+               -num_threads 16 \
                -outfmt "6 qseqid sseqid pident evalue" \
                -evalue 0.00001 \
                -perc_identity 95 \
