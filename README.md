@@ -75,4 +75,4 @@ El pipeline genera los siguientes resultados organizados en directorios:
      
 ## Datos sin procesar y ensamblaje del genoma
 - Datos sin procesar están disponibles en [OneDrive](https://umagcl-my.sharepoint.com/:f:/g/personal/nicole_soto_funcionarios_umag_cl/EjGVhLwz1kxFg-2pKcruBrABIrg9bF_RDjstKR7xpZ_Gzg?e=oKGhCk)
-- El ensamble resultante para el genoma de Pseudomonas aeruginosa esta disponible en [OneDrive](https://umagcl-my.sharepoint.com/:f:/g/personal/nicole_soto_funcionarios_umag_cl/EjGVhLwz1kxFg-2pKcruBrABIrg9bF_RDjstKR7xpZ_Gzg?e=oKGhCk)
+- El ensamble resultante para el genoma de Pseudomonas aeruginosa esta disponible en [OneDrive](https://umagcl-my.sharepoint.com/:f:/g/personal/nicole_soto_funcionarios_umag_cl/Ep0s2ng-GoZBteMTUKuYk4EBUj6kXEALNq2ZKvXdnPSLkA?e=cZOHbK)
