@@ -50,16 +50,24 @@ El pipeline genera los siguientes resultados organizados en directorios:
 
 1. **Control de Calidad**  
    - Reportes iniciales en `results/pseudomonas/inicial_qc`  
+   - Resultados postfiltros en `results/pseudomonas/filtered_sequences`
    - Resultados combinados en `multiqc_results/multiqc_report.html`
 
 2. **Descontaminación**  
-   - Secuencias descontaminadas y archivos asociados en `results/pseudomonas/decontamination`
+   - Secuencias descontaminadas e información de contaminates en `results/pseudomonas/decontamination`
 
 3. **Ensamblaje**  
-   - Archivos ensamblados y gráficos en `results/pseudomonas/assembly`
+   - Archivos ensamblados y gráficos en `results/pseudomonas/assembly`, incluyendo:
+     - `genome_decontaminated.fastq_no_duplicates.fastq.gz`
+     - Resultados de consenso en `medaka_output/consensus.fasta`
+     - Ensamblajes intermedios en `resulting_genome`:
+       - `draft_assembly.fasta`
+       - `contigs.fasta`
+       - `filtered_contigs.fasta`
+       - Archivos de estadística como `contigs_stats.txt` y `assembly_info.txt`
 
 4. **Análisis de Profundidad**  
-   - Gráfico generado en `results/pseudomonas/profundidad_genoma.png`
-
-
-
+   - Gráfico de profundidad en `results/pseudomonas/assembly_analysis/profundidad_genoma.png`
+   - Reportes:
+     - Profundidad por base en `depth_per_base.txt`
+     - Reportes de calidad y anotación en `assembly_analysis/report/`
