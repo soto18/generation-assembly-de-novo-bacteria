@@ -1,17 +1,17 @@
-# Proyecto de Secuenciación y Análisis Genómico
+# Ensamblaje de genoma de bacterias
 
 ## Índice
 1. [Descripción](#descripción)
 2. [Requisitos](#requisitos)
-3. [Ejecución del Pipeline](#ejecución-del-pipeline)
-   - [Comando de Ejecución](#comando-de-ejecución)
-   - [Descripción de los Parámetros](#descripción-de-los-parámetros)
+3. [Ejecución del pipeline](#ejecución-del-pipeline)
+   - [Comando de ejecución](#comando-de-ejecución)
+   - [Descripción de los parámetros](#descripción-de-los-parámetros)
 4. [Resultados](#resultados)
 
 ---
 
 ## Descripción
-Este proyecto tiene como objetivo realizar la secuenciación y análisis genómico de muestras utilizando un flujo de trabajo automatizado implementado en Nextflow. El pipeline incluye pasos de control de calidad, ensamblaje, descontaminación y análisis de profundidad del genoma.
+El proyecto automatiza el ensamblaje de novo de genoma bacteriano a partir de datos de secuenciación sin procesar. El pipeline, implementado en Nextflow, incluye control de calidad, ensamblaje, descontaminación y análisis de métricas como calidad, completitud y cobertura del genoma ensamblado.
 
 ---
 
@@ -23,7 +23,7 @@ Este proyecto tiene como objetivo realizar la secuenciación y análisis genómi
 
 ## Ejecución del Pipeline
 
-### Comando de Ejecución
+### Comando de ejecución
 Para ejecutar el pipeline, utiliza el siguiente comando:
 
 ```bash
@@ -36,7 +36,7 @@ nextflow run main.nf
   --min_qual 15
 ```
 
-### Descripción de los Parámetros
+### Descripción de parámetros
 - --genome_file: Archivo en formato FASTQ que contiene las secuencias de nucleótidos del genoma de interés.  
 - --contamination_db: Archivo multifasta que almacena las secuencias del organismo contaminante.  
 - --output_name: Nombre del directorio de salida.  
@@ -48,7 +48,7 @@ nextflow run main.nf
 ## Resultados
 El pipeline genera los siguientes resultados organizados en directorios:
 
-1. **Control de Calidad**  
+1. **Control de calidad**  
    - Reportes iniciales en `results/pseudomonas/inicial_qc`  
    - Resultados postfiltros en `results/pseudomonas/filtered_sequences`
    - Resultados combinados en `multiqc_results/multiqc_report.html`
@@ -66,7 +66,7 @@ El pipeline genera los siguientes resultados organizados en directorios:
        - `filtered_contigs.fasta`
        - Archivos de estadística como `contigs_stats.txt` y `assembly_info.txt`
 
-4. **Análisis de Profundidad**  
+4. **Análisis de profundidad**  
    - Gráfico de profundidad en `results/pseudomonas/assembly_analysis/profundidad_genoma.png`
    - Reportes:
      - Profundidad por base en `depth_per_base.txt`
