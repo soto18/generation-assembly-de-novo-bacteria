@@ -7,6 +7,7 @@
    - [Comando de ejecución](#comando-de-ejecución)
    - [Descripción de los parámetros](#descripción-de-los-parámetros)
 4. [Resultados](#resultados)
+5. [Raw data and preprocessing](#data)
 
 ---
 
@@ -71,3 +72,7 @@ El pipeline genera los siguientes resultados organizados en directorios:
    - Reportes:
      - Profundidad por base en `depth_per_base.txt`
      - Reportes de calidad y anotación en `assembly_analysis/report/`
+     
+## Datos sin procesar y ensamblaje del genoma
+- Datos sin procesar están disponibles en [OneDrive](https://umagcl-my.sharepoint.com/:f:/g/personal/nicole_soto_funcionarios_umag_cl/EjGVhLwz1kxFg-2pKcruBrABIrg9bF_RDjstKR7xpZ_Gzg?e=oKGhCk)
+- El ensamble resultante para el genoma de Pseudomonas aeruginosa esta disponible en [OneDrive](https://umagcl-my.sharepoint.com/:f:/g/personal/nicole_soto_funcionarios_umag_cl/EjGVhLwz1kxFg-2pKcruBrABIrg9bF_RDjstKR7xpZ_Gzg?e=oKGhCk)
